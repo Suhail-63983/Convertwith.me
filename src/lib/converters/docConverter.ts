@@ -6,16 +6,13 @@ let pandocInstance: any = null;
 async function ensurePandoc(): Promise<any> {
   if (pandocLoaded && pandocInstance) return pandocInstance;
 
-  const scriptUrl =
-    "https://cdn.jsdelivr.net/npm/pandoc-wasm@0.1.3/dist/pandoc.mjs";
+	const scriptUrl = 'https://esm.run/pandoc-wasm@1.0.1';
+	const pandocModule: any = await import(/* @vite-ignore */ scriptUrl);
 
-  const pandocModule: any = await import(/* @vite-ignore */ scriptUrl);
+	pandocInstance = pandocModule;
+	pandocLoaded = true;
 
-  const instance = await pandocModule.default();
-  pandocInstance = instance;
-  pandocLoaded = true;
-
-  return instance;
+	return pandocInstance;
 }
 
 export const docConverter: ConverterModule = {
@@ -57,19 +54,24 @@ export const docConverter: ConverterModule = {
       );
     }
 
-    const result = pandoc.convert(uint8, {
-      from: inputFormat,
-      to: outputFormat,
-    });
+		const baseName = file.name.replace(/\.[^.]+$/, '');
+		const filename = `${baseName}.${outputExtension}`;
 
-    if (!result || !result.output) {
-      throw new Error("Pandoc conversion failed: no output generated");
-    }
+		// Provide the binary file as a resource and command pandoc to read from it
+		const result = await pandoc.pandoc(
+			`-f ${inputFormat} -t ${outputFormat} -o ${filename} input_file`,
+			null,
+			[{ filename: 'input_file', contents: file }]
+		);
 
-    const blob = new Blob([result.output as ArrayBuffer], { type: mimeType });
-    const baseName = file.name.replace(/\.[^.]+$/, "");
-    const filename = `${baseName}.${outputExtension}`;
+		if (!result || !result.out) {
+			throw new Error('Pandoc conversion failed: no output generated');
+		}
 
-    return { blob, filename };
+		// The output is either a string or a Blob
+		const outputData = result.out instanceof Blob ? result.out : new Blob([result.out], { type: mimeType });
+		const blob = new Blob([outputData], { type: mimeType });
+
+		return { blob, filename };
   },
 };
