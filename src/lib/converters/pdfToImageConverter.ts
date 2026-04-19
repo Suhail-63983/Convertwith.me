@@ -9,7 +9,7 @@ async function ensurePdfjs(): Promise<any> {
   pdfjsLib = await import("pdfjs-dist");
 
   pdfjsLib.GlobalWorkerOptions.workerSrc =
-    "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.8.69/build/pdf.worker.min.mjs";
+    "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.worker.min.mjs";
 
   pdfjsLoaded = true;
   return pdfjsLib;

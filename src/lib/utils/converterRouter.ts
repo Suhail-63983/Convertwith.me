@@ -12,7 +12,7 @@ export interface ConverterModule {
 }
 
 export interface ConverterInfo {
-  libraryName: "imagemagick" | "mammoth" | "pdfjs" | "pdflib";
+  libraryName: "imagemagick" | "mammoth" | "pdfjs" | "pdflib" | "docx-to-pdf" | "pdf-to-docx";
   fromFormat: string;
   toFormat: string;
   load: () => Promise<ConverterModule>;
@@ -66,6 +66,18 @@ const SUPPORTED_CONVERSIONS: Record<string, () => Promise<ConverterModule>> = {
     import("$lib/converters/imageToPdfConverter").then(
       (m) => m.imageToPdfConverter,
     ),
+
+  // DOCX-to-PDF (mammoth → HTML → jsPDF)
+  "docx-to-pdf": () =>
+    import("$lib/converters/docxToPdfConverter").then(
+      (m) => m.docxToPdfConverter,
+    ),
+
+  // PDF-to-DOCX (pdfjs → text extraction → docx)
+  "pdf-to-docx": () =>
+    import("$lib/converters/pdfToDocxConverter").then(
+      (m) => m.pdfToDocxConverter,
+    ),
 };
 
 const LIBRARY_MAP: Record<string, ConverterInfo["libraryName"]> = {
@@ -85,6 +97,8 @@ const LIBRARY_MAP: Record<string, ConverterInfo["libraryName"]> = {
   "pdf-to-png": "pdfjs",
   "jpg-to-pdf": "pdflib",
   "png-to-pdf": "pdflib",
+  "docx-to-pdf": "docx-to-pdf",
+  "pdf-to-docx": "pdf-to-docx",
 };
 
 export function getConverter(slug: string): ConverterInfo | null {

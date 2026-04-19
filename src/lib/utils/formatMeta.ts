@@ -370,6 +370,72 @@ const meta: Record<string, FormatMeta> = {
     ],
   },
 
+  "pdf-to-docx": {
+    title: "Convert PDF to DOCX Online — Free & Private",
+    description:
+      "Convert PDF to editable DOCX Word documents instantly in your browser. No uploads, 100% private. Extracts text content from your PDF into a clean Word document.",
+    h1: "Convert PDF to DOCX — Free, Private, Instant",
+    faq: [
+      {
+        question: "Is this PDF to DOCX converter free?",
+        answer:
+          "Yes, completely free with no limits on conversions. All processing happens in your browser — your files never leave your device.",
+      },
+      {
+        question: "Is my PDF document kept private?",
+        answer:
+          "Absolutely. Your PDF never leaves your device. The conversion runs entirely in your browser. We have zero access to your documents.",
+      },
+      {
+        question: "Will the DOCX preserve all formatting?",
+        answer:
+          "The converter extracts text content and basic paragraph structure. Complex layouts, images, tables, and custom fonts may not transfer perfectly. For best results, use text-heavy PDFs.",
+      },
+      {
+        question: "Can I convert scanned PDFs?",
+        answer:
+          "This converter works best with text-based PDFs. Scanned PDFs (image-based) will not have their text extracted since OCR is not currently supported.",
+      },
+      {
+        question: "What PDF file sizes are supported?",
+        answer:
+          "Since processing is entirely client-side, there are no server limits. PDF files up to 100MB work on modern devices. Very large PDFs may take longer to process.",
+      },
+    ],
+  },
+  "docx-to-pdf": {
+    title: "Convert DOCX to PDF Online — Free & Private",
+    description:
+      "Convert Word DOCX documents to PDF instantly in your browser. No uploads, 100% private. Perfect for sharing documents in universal PDF format.",
+    h1: "Convert DOCX to PDF — Free, Private, Instant",
+    faq: [
+      {
+        question: "Why should I convert DOCX to PDF?",
+        answer:
+          "PDF is the universal document format. It preserves your document's appearance across all devices and platforms, ensuring consistent display for every recipient.",
+      },
+      {
+        question: "Is my Word document kept private?",
+        answer:
+          "Yes. The conversion happens entirely in your browser. Your DOCX file never leaves your device. We have zero access to your documents.",
+      },
+      {
+        question: "Will the PDF look exactly like my Word document?",
+        answer:
+          "The converter preserves text content, headings, lists, and basic formatting. Complex layouts, custom fonts, and advanced Word features may render slightly differently.",
+      },
+      {
+        question: "Is there a file size limit for DOCX to PDF?",
+        answer:
+          "No server limits exist since processing is entirely local. Files up to 100MB work on modern devices. Very large documents may take longer.",
+      },
+      {
+        question: "Does this work offline?",
+        answer:
+          "After the initial page load, the conversion itself runs offline. However, you need an internet connection to access the tool initially.",
+      },
+    ],
+  },
   "docx-to-html": {
     title: "Convert DOCX to HTML Online — Free & Private",
     description:
