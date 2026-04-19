@@ -12,7 +12,7 @@
 						<path d="M8 16L14 10L20 16L14 22Z" fill="white" />
 						<path d="M14 16L20 10L26 16L20 22Z" fill="#93c5fd" />
 					</svg>
-					<span class="text-lg font-bold text-white">File<span class="text-brand-400">Convert</span></span>
+					<span class="text-lg font-bold text-white">File<span class="text-brand-400">Morph</span></span>
 				</div>
 				<p class="text-sm text-gray-400">
 					All conversions happen in your browser. We never see your files.
@@ -47,7 +47,7 @@
 		</div>
 
 		<div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-500">
-			<p>&copy; {year} FileConvert. All rights reserved. All conversions are processed locally in your browser.</p>
+			<p>&copy; {year} FileMorph. All rights reserved. All conversions are processed locally in your browser.</p>
 		</div>
 	</div>
 </footer>

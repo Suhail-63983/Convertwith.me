@@ -99,10 +99,11 @@
 			<a
 				href="/convert/{slug}"
 				data-sveltekit-prefetch
+				aria-label="Convert {from.toUpperCase()} to {to.toUpperCase()} — Free & Private"
 				class="card group p-4 text-center transition-all duration-200 {isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}"
 				style="transition: opacity 0.4s ease, transform 0.4s ease;"
 			>
-				<div class="w-10 h-10 mx-auto mb-3 rounded-lg bg-gradient-to-br {gradient} flex items-center justify-center text-white text-lg font-bold">
+				<div class="w-10 h-10 mx-auto mb-3 rounded-lg bg-gradient-to-br {gradient} flex items-center justify-center text-white text-lg font-bold" aria-hidden="true">
 					{formatIcons[from] || '📁'}
 				</div>
 				<p class="text-sm font-semibold text-gray-800 group-hover:text-brand-600 transition-colors">

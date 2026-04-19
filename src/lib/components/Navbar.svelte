@@ -19,7 +19,7 @@
 					<path d="M8 16L14 10L20 16L14 22Z" fill="white" />
 					<path d="M14 16L20 10L26 16L20 22Z" fill="#93c5fd" />
 				</svg>
-				<span class="text-xl font-bold text-gray-900">File<span class="text-brand-600">Convert</span></span>
+				<span class="text-xl font-bold text-gray-900">File<span class="text-brand-600">Morph</span></span>
 			</a>
 
 			<div class="hidden md:flex items-center gap-6">

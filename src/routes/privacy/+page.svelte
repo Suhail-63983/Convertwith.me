@@ -1,6 +1,10 @@
 <svelte:head>
-	<title>Privacy Policy — FileConvert</title>
-	<meta name="description" content="Privacy policy for FileConvert — a privacy-first, client-side file converter. Learn how we protect your data." />
+	<title>Privacy Policy — FileMorph</title>
+	<meta name="description" content="Privacy policy for FileMorph — a privacy-first, client-side file converter. Learn how we protect your data." />
+	<meta property="og:title" content="Privacy Policy — FileMorph" />
+	<meta property="og:description" content="Privacy policy for FileMorph — a privacy-first, client-side file converter. Learn how we protect your data." />
+	<meta name="twitter:title" content="Privacy Policy — FileMorph" />
+	<meta name="twitter:description" content="Privacy policy for FileMorph — learn how we protect your data." />
 </svelte:head>
 
 <div class="max-w-4xl mx-auto px-4 py-16">
@@ -10,7 +14,7 @@
 	<div class="prose prose-gray max-w-none">
 		<h2 class="text-xl font-semibold text-gray-900 mt-8 mb-4">1. Overview</h2>
 		<p class="text-gray-600 mb-4">
-			FileConvert ("we", "us", or "our") operates a privacy-first file conversion service at fileconvert.app (the "Service"). Our fundamental principle is that your files are your business. All file conversions are processed entirely within your web browser using client-side technology (WebAssembly and JavaScript). Your files are never uploaded to our servers or any third-party servers.
+			FileMorph ("we", "us", or "our") operates a privacy-first file conversion service at filemorph.me (the "Service"). Our fundamental principle is that your files are your business. All file conversions are processed entirely within your web browser using client-side technology (WebAssembly and JavaScript). Your files are never uploaded to our servers or any third-party servers.
 		</p>
 
 		<h2 class="text-xl font-semibold text-gray-900 mt-8 mb-4">2. File Processing & Data Handling</h2>
@@ -119,8 +123,8 @@
 			If you have questions about this privacy policy or our data practices, please contact us at:
 		</p>
 		<p class="text-gray-600 mb-4">
-			Email: privacy@fileconvert.app<br />
-			GitHub: github.com/fileconvert
+			Email: privacy@filemorph.me<br />
+			GitHub: github.com/filemorph
 		</p>
 	</div>
 </div>
