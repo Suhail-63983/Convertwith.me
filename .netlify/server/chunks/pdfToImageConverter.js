@@ -1,0 +1,49 @@
+let pdfjsLoaded = false;
+let pdfjsLib = null;
+async function ensurePdfjs() {
+  if (pdfjsLoaded && pdfjsLib) return pdfjsLib;
+  pdfjsLib = await import("pdfjs-dist");
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.8.69/build/pdf.worker.min.mjs";
+  pdfjsLoaded = true;
+  return pdfjsLib;
+}
+const pdfToImageConverter = {
+  libraryName: "pdfjs",
+  async init() {
+    await ensurePdfjs();
+  },
+  async convert(file, fromFormat, toFormat) {
+    if (fromFormat !== "pdf" || toFormat !== "jpg" && toFormat !== "png") {
+      throw new Error(
+        `PDF-to-image converter only supports pdf-to-jpg/png, got ${fromFormat}-to-${toFormat}`
+      );
+    }
+    const pdfjs = await ensurePdfjs();
+    const arrayBuffer = await file.arrayBuffer();
+    const pdf = await pdfjs.getDocument({ data: arrayBuffer }).promise;
+    const numPages = pdf.numPages;
+    const page = await pdf.getPage(1);
+    const scale = 2;
+    const viewport = page.getViewport({ scale });
+    const canvas = document.createElement("canvas");
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+    const ctx = canvas.getContext("2d");
+    await page.render({
+      canvasContext: ctx,
+      viewport
+    }).promise;
+    const mimeType = toFormat === "jpg" ? "image/jpeg" : "image/png";
+    const quality = toFormat === "jpg" ? 0.92 : void 0;
+    const blob = await new Promise((resolve) => {
+      canvas.toBlob((b) => resolve(b), mimeType, quality);
+    });
+    const baseName = file.name.replace(/\.[^.]+$/, "");
+    const ext = toFormat === "jpg" ? "jpg" : "png";
+    const filename = numPages > 1 ? `${baseName}-page1.${ext}` : `${baseName}.${ext}`;
+    return { blob, filename };
+  }
+};
+export {
+  pdfToImageConverter
+};

@@ -16,7 +16,7 @@ fileconvert/
 ├── vite.config.ts
 ├── tailwind.config.ts
 ├── postcss.config.js
-├── vercel.json
+├── netlify.toml
 ├── static/
 │   ├── robots.txt
 │   └── favicon.svg
@@ -139,23 +139,24 @@ Replace the placeholder div (lines 10-13) with your Monetag sticky footer script
 - No ads on the homepage (good for SEO quality score)
 - No popups, push notifications, or auto-redirects
 
-## 5. Deploy to Vercel
+## 5. Deploy to Netlify
 
 ### First-time setup
 
 ```bash
-npm install -g vercel
-vercel login
-vercel link
+npm install netlify-cli -g
+netlify login
 ```
 
 ### Deploy
 
 ```bash
-vercel --prod
+netlify deploy --build --prod
 ```
 
-The `vercel.json` file in the project root handles:
+Or, alternatively, you can connect your Git repository directly in the Netlify Dashboard (https://app.netlify.com). Netlify will automatically build and deploy new commits.
+
+The `netlify.toml` file in the project root handles:
 
 - COOP/COEP headers (required for SharedArrayBuffer/WASM)
 - Cache-Control headers for static assets and HTML pages
@@ -166,7 +167,7 @@ The `vercel.json` file in the project root handles:
 After deployment, verify the COOP/COEP headers are set:
 
 ```bash
-curl -I https://your-domain.vercel.app
+curl -I https://your-domain.netlify.app
 ```
 
 You should see:
@@ -178,14 +179,12 @@ Cross-Origin-Embedder-Policy: require-corp
 
 ## 6. Set a Custom Domain
 
-1. Go to https://vercel.com/dashboard
+1. Go to https://app.netlify.com
 2. Select your project
-3. Go to Settings > Domains
+3. Go to Domain Management > Add custom domain
 4. Add your custom domain (e.g., fileconvert.app)
-5. Update your domain's DNS records as instructed by Vercel:
-   - Add a CNAME record pointing to `cname.vercel-dns.com`
-   - Or add an A record pointing to `76.76.21.21`
-6. Wait for SSL certificate provisioning (automatic, usually < 5 minutes)
+5. Update your domain's DNS records as instructed by Netlify.
+6. Wait for SSL certificate provisioning (automatic via Let's Encrypt).
 7. Update the base URL in these files:
    - `src/routes/sitemap.xml/+server.ts` — change `https://fileconvert.app` to your domain
    - `static/robots.txt` — change the Sitemap URL to your domain
@@ -197,7 +196,7 @@ Cross-Origin-Embedder-Policy: require-corp
 2. Add your property (your domain URL)
 3. Verify ownership using one of:
    - HTML file upload (download from Search Console, place in `static/` folder)
-   - DNS TXT record (recommended for Vercel)
+   - DNS TXT record (recommended for Netlify)
    - HTML meta tag (add to `src/app.html`)
 4. Submit your sitemap:
    - Go to Sitemaps section
@@ -224,7 +223,7 @@ To add privacy-preserving analytics, add this script to `src/app.html` just befo
 
 This means the COOP/COEP headers are not set. Check:
 
-1. `vercel.json` is in the project root
+1. `netlify.toml` is in the project root and deployed properly.
 2. You're accessing the site over HTTPS
 3. The headers are actually being served (check with `curl -I`)
 
