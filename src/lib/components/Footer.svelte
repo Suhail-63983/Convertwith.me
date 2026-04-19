@@ -1,0 +1,53 @@
+<script lang="ts">
+	const year = new Date().getFullYear();
+</script>
+
+<footer class="bg-gray-900 text-gray-300 mt-16">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+			<div>
+				<div class="flex items-center gap-2 mb-4">
+					<svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+						<rect width="32" height="32" rx="8" fill="#2563EB" />
+						<path d="M8 16L14 10L20 16L14 22Z" fill="white" />
+						<path d="M14 16L20 10L26 16L20 22Z" fill="#93c5fd" />
+					</svg>
+					<span class="text-lg font-bold text-white">File<span class="text-brand-400">Convert</span></span>
+				</div>
+				<p class="text-sm text-gray-400">
+					All conversions happen in your browser. We never see your files.
+				</p>
+			</div>
+
+			<div>
+				<h3 class="text-white font-semibold mb-4">Quick Links</h3>
+				<ul class="space-y-2 text-sm">
+					<li><a href="/" class="hover:text-white transition-colors" data-sveltekit-prefetch>Home</a></li>
+					<li><a href="/#formats" class="hover:text-white transition-colors">All Converters</a></li>
+					<li><a href="/privacy" class="hover:text-white transition-colors" data-sveltekit-prefetch>Privacy Policy</a></li>
+					<li><a href="/about" class="hover:text-white transition-colors">About</a></li>
+				</ul>
+			</div>
+
+			<div>
+				<h3 class="text-white font-semibold mb-4">Connect</h3>
+				<ul class="space-y-2 text-sm">
+					<li>
+						<a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
+							Twitter / X
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
+							GitHub
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-500">
+			<p>&copy; {year} FileConvert. All rights reserved. All conversions are processed locally in your browser.</p>
+		</div>
+	</div>
+</footer>

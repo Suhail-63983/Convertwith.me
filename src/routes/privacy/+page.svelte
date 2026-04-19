@@ -1,0 +1,126 @@
+<svelte:head>
+	<title>Privacy Policy — FileConvert</title>
+	<meta name="description" content="Privacy policy for FileConvert — a privacy-first, client-side file converter. Learn how we protect your data." />
+</svelte:head>
+
+<div class="max-w-4xl mx-auto px-4 py-16">
+	<h1 class="text-3xl font-bold text-gray-900 mb-8">Privacy Policy</h1>
+	<p class="text-sm text-gray-500 mb-8">Last updated: January 2025</p>
+
+	<div class="prose prose-gray max-w-none">
+		<h2 class="text-xl font-semibold text-gray-900 mt-8 mb-4">1. Overview</h2>
+		<p class="text-gray-600 mb-4">
+			FileConvert ("we", "us", or "our") operates a privacy-first file conversion service at fileconvert.app (the "Service"). Our fundamental principle is that your files are your business. All file conversions are processed entirely within your web browser using client-side technology (WebAssembly and JavaScript). Your files are never uploaded to our servers or any third-party servers.
+		</p>
+
+		<h2 class="text-xl font-semibold text-gray-900 mt-8 mb-4">2. File Processing & Data Handling</h2>
+		<p class="text-gray-600 mb-4">
+			<strong>No File Uploads.</strong> When you use our Service, your files are processed entirely on your device. The conversion is performed by code running in your browser (using WebAssembly and JavaScript libraries). No file data is transmitted to our servers or any third-party server at any point during the conversion process.
+		</p>
+		<p class="text-gray-600 mb-4">
+			<strong>No File Storage.</strong> We do not store, cache, or retain any files you convert. Once you close the browser tab or navigate away, the converted file exists only in your browser's memory and is immediately released.
+		</p>
+		<p class="text-gray-600 mb-4">
+			<strong>No File Tracking.</strong> We have no ability to see, access, or reconstruct the files you convert. We do not log file names, file sizes, file types, or conversion results.
+		</p>
+
+		<h2 class="text-xl font-semibold text-gray-900 mt-8 mb-4">3. Analytics</h2>
+		<p class="text-gray-600 mb-4">
+			We use <strong>Plausible Analytics</strong>, a privacy-preserving, GDPR-compliant analytics service. Plausible does not use cookies, does not collect personal data, and does not track users across websites. All data is aggregated and anonymized. We collect only basic page view statistics (which pages are visited and referral sources) to understand usage patterns and improve the Service.
+		</p>
+		<p class="text-gray-600 mb-4">
+			Plausible Analytics is fully compliant with GDPR, CCPA, and PECR. You can learn more about Plausible's privacy approach at plausible.io/privacy-focused-web-analytics.
+		</p>
+
+		<h2 class="text-xl font-semibold text-gray-900 mt-8 mb-4">4. Advertising (Monetag)</h2>
+		<p class="text-gray-600 mb-4">
+			We display advertisements through <strong>Monetag</strong>, a third-party advertising network. Monetag may collect certain information through their ad scripts, including:
+		</p>
+		<ul class="list-disc list-inside text-gray-600 mb-4 space-y-1">
+			<li>IP address (for geographic targeting)</li>
+			<li>Browser type and version</li>
+			<li>Device type and operating system</li>
+			<li>Page URL and referrer</li>
+			<li>Cookies for ad personalization and frequency capping</li>
+		</ul>
+		<p class="text-gray-600 mb-4">
+			Monetag's use of data is governed by their own privacy policy. We do not control Monetag's data collection practices. Monetag ads are displayed only after conversion is complete, and never during file upload or processing. A sticky footer ad is displayed with a close button so users can dismiss it.
+		</p>
+		<p class="text-gray-600 mb-4">
+			If you prefer not to see Monetag ads, you may use an ad blocker. This will not affect the functionality of the converter in any way.
+		</p>
+
+		<h2 class="text-xl font-semibold text-gray-900 mt-8 mb-4">5. Cookies</h2>
+		<p class="text-gray-600 mb-4">
+			<strong>Conversion Functionality Cookies: None.</strong> We do not use any cookies for the core file conversion functionality. The converter works without any cookies enabled.
+		</p>
+		<p class="text-gray-600 mb-4">
+			<strong>Third-Party Cookies.</strong> Monetag may set cookies for advertising purposes. Plausible Analytics does not use any cookies. We do not set first-party cookies.
+		</p>
+
+		<h2 class="text-xl font-semibold text-gray-900 mt-8 mb-4">6. WebAssembly (WASM) Resources</h2>
+		<p class="text-gray-600 mb-4">
+			To perform file conversions, our Service downloads WebAssembly (.wasm) files and JavaScript libraries from CDN servers (jsdelivr.net and npm CDN). These are standard, publicly available library files. These downloads are necessary for the converter to function and are the only network requests made during the conversion process. WASM files may be cached by your browser for performance on repeat visits.
+		</p>
+
+		<h2 class="text-xl font-semibold text-gray-900 mt-8 mb-4">7. Cross-Origin Isolation Headers</h2>
+		<p class="text-gray-600 mb-4">
+			Our Service sets Cross-Origin-Opener-Policy and Cross-Origin-Embedder-Policy HTTP headers on all pages. These headers are required for SharedArrayBuffer support, which is necessary for WebAssembly-based conversions to function. These headers enhance your security by preventing cross-origin attacks.
+		</p>
+
+		<h2 class="text-xl font-semibold text-gray-900 mt-8 mb-4">8. GDPR Compliance (EU Users)</h2>
+		<p class="text-gray-600 mb-4">
+			Under the General Data Protection Regulation (GDPR), you have the right to:
+		</p>
+		<ul class="list-disc list-inside text-gray-600 mb-4 space-y-1">
+			<li>Access any personal data held about you</li>
+			<li>Request correction or deletion of your data</li>
+			<li>Object to processing of your data</li>
+			<li>Data portability</li>
+		</ul>
+		<p class="text-gray-600 mb-4">
+			Since we do not collect or store any personal data or files, there is no data to access, correct, or delete from our systems. For data collected by Monetag, please contact Monetag directly or exercise your rights through their opt-out mechanisms.
+		</p>
+		<p class="text-gray-600 mb-4">
+			We do not require a legal basis for processing personal data because we do not process personal data. The only data collection on our site is performed by third parties (Monetag and Plausible).
+		</p>
+
+		<h2 class="text-xl font-semibold text-gray-900 mt-8 mb-4">9. CCPA Compliance (California Users)</h2>
+		<p class="text-gray-600 mb-4">
+			Under the California Consumer Privacy Act (CCPA), California residents have the right to:
+		</p>
+		<ul class="list-disc list-inside text-gray-600 mb-4 space-y-1">
+			<li>Know what personal information is collected</li>
+			<li>Request deletion of personal information</li>
+			<li>Opt out of the sale of personal information</li>
+			<li>Not be discriminated against for exercising these rights</li>
+		</ul>
+		<p class="text-gray-600 mb-4">
+			We do not sell personal information. We do not collect personal information. For information collected by Monetag, please review Monetag's privacy policy and opt-out options.
+		</p>
+
+		<h2 class="text-xl font-semibold text-gray-900 mt-8 mb-4">10. Children's Privacy</h2>
+		<p class="text-gray-600 mb-4">
+			Our Service is not directed at children under 13. We do not knowingly collect personal information from children under 13. Since we do not collect personal information from anyone, this is inherently satisfied.
+		</p>
+
+		<h2 class="text-xl font-semibold text-gray-900 mt-8 mb-4">11. Security</h2>
+		<p class="text-gray-600 mb-4">
+			We take security seriously. All connections to our Service are encrypted with HTTPS. The Cross-Origin isolation headers we set provide additional protection against side-channel attacks. Your files are processed in an isolated browser context and are never transmitted over the network.
+		</p>
+
+		<h2 class="text-xl font-semibold text-gray-900 mt-8 mb-4">12. Changes to This Policy</h2>
+		<p class="text-gray-600 mb-4">
+			We may update this privacy policy from time to time. Any changes will be posted on this page with an updated "Last updated" date. If we make material changes, we will provide a prominent notice on our homepage.
+		</p>
+
+		<h2 class="text-xl font-semibold text-gray-900 mt-8 mb-4">13. Contact</h2>
+		<p class="text-gray-600 mb-4">
+			If you have questions about this privacy policy or our data practices, please contact us at:
+		</p>
+		<p class="text-gray-600 mb-4">
+			Email: privacy@fileconvert.app<br />
+			GitHub: github.com/fileconvert
+		</p>
+	</div>
+</div>

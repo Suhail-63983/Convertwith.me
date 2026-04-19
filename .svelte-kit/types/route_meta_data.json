@@ -1,0 +1,21 @@
+{
+	"/": [
+		"src/routes/+page.ts",
+		"src/routes/+layout.ts",
+		"src/routes/+layout.ts"
+	],
+	"/about": [
+		"src/routes/+layout.ts"
+	],
+	"/convert/[slug]": [
+		"src/routes/convert/[slug]/+page.ts",
+		"src/routes/convert/[slug]/+page.server.ts",
+		"src/routes/+layout.ts"
+	],
+	"/privacy": [
+		"src/routes/+layout.ts"
+	],
+	"/sitemap.xml": [
+		"src/routes/sitemap.xml/+server.ts"
+	]
+}
