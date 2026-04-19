@@ -58,21 +58,26 @@
 	let cardElements: HTMLElement[] = [];
 
 	function setupObserver(node: HTMLElement) {
+		const gridContainer = node.firstElementChild as HTMLElement;
+		if (!gridContainer) return { destroy() {} };
+
 		const observer = new IntersectionObserver(
 			(entries) => {
 				for (const entry of entries) {
 					if (entry.isIntersecting) {
-						const index = Array.from(node.children).indexOf(entry.target as HTMLElement);
-						const newSet = new Set(observedCards);
-						newSet.add(index);
-						observedCards = newSet;
+						const index = Array.from(gridContainer.children).indexOf(entry.target as HTMLElement);
+						if (index !== -1) {
+							const newSet = new Set(observedCards);
+							newSet.add(index);
+							observedCards = newSet;
+						}
 					}
 				}
 			},
 			{ rootMargin: '100px' }
 		);
 
-		for (const child of Array.from(node.children)) {
+		for (const child of Array.from(gridContainer.children)) {
 			observer.observe(child);
 		}
 
