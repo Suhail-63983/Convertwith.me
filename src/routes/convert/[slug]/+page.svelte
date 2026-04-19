@@ -40,7 +40,7 @@
 		}))
 	});
 
-	const needsWasm = $derived(libraryName === 'imagemagick' || libraryName === 'pandoc' || libraryName === 'pdfjs');
+	const needsWasm = $derived(libraryName === 'imagemagick' || libraryName === 'pdfjs');
 
 	async function loadConverter() {
 		const converter = getConverter(slug);

@@ -5,7 +5,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 	
 	// Ensure that SharedArrayBuffer works by applying COOP and COEP headers for SSR responses
 	response.headers.set('Cross-Origin-Opener-Policy', 'same-origin');
-	response.headers.set('Cross-Origin-Embedder-Policy', 'require-corp');
+	response.headers.set('Cross-Origin-Embedder-Policy', 'credentialless');
 	
 	return response;
 };

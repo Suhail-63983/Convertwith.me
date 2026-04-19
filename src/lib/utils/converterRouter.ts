@@ -12,13 +12,14 @@ export interface ConverterModule {
 }
 
 export interface ConverterInfo {
-  libraryName: "imagemagick" | "pandoc" | "mammoth" | "pdfjs" | "pdflib";
+  libraryName: "imagemagick" | "mammoth" | "pdfjs" | "pdflib";
   fromFormat: string;
   toFormat: string;
   load: () => Promise<ConverterModule>;
 }
 
 const SUPPORTED_CONVERSIONS: Record<string, () => Promise<ConverterModule>> = {
+  // Image-to-image (ImageMagick WASM)
   "jpg-to-png": () =>
     import("$lib/converters/imageConverter").then((m) => m.imageConverter),
   "jpg-to-webp": () =>
@@ -42,12 +43,11 @@ const SUPPORTED_CONVERSIONS: Record<string, () => Promise<ConverterModule>> = {
   "heic-to-png": () =>
     import("$lib/converters/imageConverter").then((m) => m.imageConverter),
 
-  "pdf-to-docx": () =>
-    import("$lib/converters/docConverter").then((m) => m.docConverter),
-  "docx-to-pdf": () =>
-    import("$lib/converters/docConverter").then((m) => m.docConverter),
+  // DOCX-to-HTML (mammoth — reliable, no WASM needed)
   "docx-to-html": () =>
     import("$lib/converters/mammothConverter").then((m) => m.mammothConverter),
+
+  // PDF-to-Image (pdfjs-dist)
   "pdf-to-jpg": () =>
     import("$lib/converters/pdfToImageConverter").then(
       (m) => m.pdfToImageConverter,
@@ -56,6 +56,8 @@ const SUPPORTED_CONVERSIONS: Record<string, () => Promise<ConverterModule>> = {
     import("$lib/converters/pdfToImageConverter").then(
       (m) => m.pdfToImageConverter,
     ),
+
+  // Image-to-PDF (pdf-lib — lightweight, no WASM)
   "jpg-to-pdf": () =>
     import("$lib/converters/imageToPdfConverter").then(
       (m) => m.imageToPdfConverter,
@@ -78,8 +80,6 @@ const LIBRARY_MAP: Record<string, ConverterInfo["libraryName"]> = {
   "gif-to-jpg": "imagemagick",
   "heic-to-jpg": "imagemagick",
   "heic-to-png": "imagemagick",
-  "pdf-to-docx": "pandoc",
-  "docx-to-pdf": "pandoc",
   "docx-to-html": "mammoth",
   "pdf-to-jpg": "pdfjs",
   "pdf-to-png": "pdfjs",

@@ -7,11 +7,19 @@ async function ensureImageMagick(): Promise<void> {
 
   const { initializeImageMagick } = await import("@imagemagick/magick-wasm");
 
-  await initializeImageMagick(
-    new URL(
-      "https://cdn.jsdelivr.net/npm/@imagemagick/magick-wasm@0.0.35/dist/magick.wasm",
-    ),
+  // Fetch the WASM binary as raw bytes — passing a URL object is unreliable.
+  // The upstream VERT project also fetches the binary and passes Uint8Array.
+  const wasmResponse = await fetch(
+    "https://cdn.jsdelivr.net/npm/@imagemagick/magick-wasm@0.0.35/dist/magick.wasm",
   );
+  if (!wasmResponse.ok) {
+    throw new Error(
+      `Failed to fetch ImageMagick WASM: ${wasmResponse.status} ${wasmResponse.statusText}`,
+    );
+  }
+  const wasmBytes = new Uint8Array(await wasmResponse.arrayBuffer());
+
+  await initializeImageMagick(wasmBytes);
 
   imagemagickLoaded = true;
 }
@@ -23,21 +31,15 @@ function getMimeType(format: string): string {
     png: "image/png",
     webp: "image/webp",
     gif: "image/gif",
+    bmp: "image/bmp",
+    tiff: "image/tiff",
+    tif: "image/tiff",
+    ico: "image/x-icon",
     heic: "image/heic",
     heif: "image/heic",
   };
   return mimeMap[format.toLowerCase()] || "application/octet-stream";
 }
-
-const FORMAT_TO_MAGICK: Record<string, string> = {
-  jpg: "Jpeg",
-  jpeg: "Jpeg",
-  png: "Png",
-  webp: "WebP",
-  gif: "Gif",
-  heic: "Heic",
-  heif: "Heif",
-};
 
 export const imageConverter: ConverterModule = {
   libraryName: "imagemagick",
@@ -59,26 +61,38 @@ export const imageConverter: ConverterModule = {
     const arrayBuffer = await file.arrayBuffer();
     const inputBytes = new Uint8Array(arrayBuffer);
 
-    const magickKey = FORMAT_TO_MAGICK[toFormat.toLowerCase()];
-    if (!magickKey) {
+    // Map our format strings to MagickFormat enum values.
+    // MagickFormat uses capitalized names like "Png", "Jpeg", "WebP", etc.
+    const toUpper = toFormat.toUpperCase();
+    const formatValue = (MagickFormat as Record<string, string>)[toUpper] ??
+      (MagickFormat as Record<string, string>)[toFormat.charAt(0).toUpperCase() + toFormat.slice(1).toLowerCase()];
+
+    if (!formatValue) {
       throw new Error(`Unsupported output format: ${toFormat}`);
     }
 
-    const formatValue = (MagickFormat as Record<string, string>)[magickKey];
-    if (!formatValue) {
-      throw new Error(`Unsupported MagickFormat key: ${magickKey}`);
-    }
-
+    // CRITICAL FIX: The Uint8Array provided in the image.write() callback is
+    // a VIEW into WASM heap memory. Once the callback returns, that memory is
+    // reclaimed/overwritten by ImageMagick. We MUST copy the data out
+    // immediately using structuredClone() or new Uint8Array(output).
+    // See: https://github.com/VERT-sh/VERT/blob/main/src/lib/workers/magick.ts
     const outputBytes = await new Promise<Uint8Array>((resolve, reject) => {
-      ImageMagick.read(inputBytes, (image) => {
-        image.write(formatValue as any, (output: Uint8Array) => {
-          resolve(output);
+      try {
+        ImageMagick.read(inputBytes, (image) => {
+          image.write(formatValue as unknown as typeof MagickFormat[keyof typeof MagickFormat], (output: Uint8Array) => {
+            // Copy the data out of WASM memory immediately
+            resolve(new Uint8Array(output));
+          });
         });
-      });
+      } catch (e) {
+        reject(e);
+      }
     });
 
     const mimeType = getMimeType(toFormat);
-    const blob = new Blob([outputBytes.buffer as ArrayBuffer], {
+    // Create the Blob directly from the copied Uint8Array, NOT from .buffer
+    // (which may reference the entire WASM heap ArrayBuffer)
+    const blob = new Blob([outputBytes], {
       type: mimeType,
     });
     const baseName = file.name.replace(/\.[^.]+$/, "");
