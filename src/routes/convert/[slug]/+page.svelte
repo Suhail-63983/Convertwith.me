@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { onMount } from 'svelte';
 	import { getConverter } from '$lib/utils/converterRouter';
 	import type { ConverterModule } from '$lib/utils/converterRouter';
 	import { checkSharedArrayBufferSupport } from '$lib/utils/fileUtils';
@@ -44,8 +43,6 @@
 	const needsWasm = $derived(libraryName === 'imagemagick' || libraryName === 'pandoc' || libraryName === 'pdfjs');
 
 	async function loadConverter() {
-		if (converterModule) return;
-
 		const converter = getConverter(slug);
 		if (!converter) {
 			errorMessage = 'Conversion type not found';
@@ -117,7 +114,11 @@
 		errorMessage = '';
 	}
 
-	onMount(() => {
+	$effect(() => {
+		// Re-run when the route changes
+		const currentSlug = slug;
+		converterModule = null;
+		handleReset();
 		loadConverter();
 	});
 </script>
