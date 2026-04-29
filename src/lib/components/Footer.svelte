@@ -9,10 +9,10 @@
 				<div class="flex items-center gap-2 mb-4">
 					<svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 						<rect width="32" height="32" rx="8" fill="#2563EB" />
-						<path d="M8 16L14 10L20 16L14 22Z" fill="white" />
-						<path d="M14 16L20 10L26 16L20 22Z" fill="#93c5fd" />
+						<path d="M6 22V10L16 22V10" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M18 16H26M22 12V20" stroke="#93c5fd" stroke-width="2.5" stroke-linecap="round"/>
 					</svg>
-					<span class="text-lg font-bold text-white">File<span class="text-brand-400">Morph</span></span>
+					<span class="text-lg font-bold text-white">Convert<span class="text-brand-400">withMe</span></span>
 				</div>
 				<p class="text-sm text-gray-400">
 					All conversions happen in your browser. We never see your files.
@@ -47,7 +47,7 @@
 		</div>
 
 		<div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-500">
-			<p>&copy; {year} FileMorph. All rights reserved. All conversions are processed locally in your browser.</p>
+			<p>&copy; {year} ConvertwithMe. All rights reserved. All conversions are processed locally in your browser.</p>
 		</div>
 	</div>
 </footer>

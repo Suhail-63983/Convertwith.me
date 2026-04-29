@@ -43,7 +43,7 @@
 	const softwareAppJsonLd = $derived({
 		'@context': 'https://schema.org',
 		'@type': 'SoftwareApplication',
-		'name': `FileMorph — ${fromFormat.toUpperCase()} to ${toFormat.toUpperCase()} Converter`,
+		'name': `ConvertwithMe — ${fromFormat.toUpperCase()} to ${toFormat.toUpperCase()} Converter`,
 		'url': canonicalUrl,
 		'applicationCategory': 'UtilitiesApplication',
 		'operatingSystem': 'Any',
@@ -63,13 +63,13 @@
 				'@type': 'ListItem',
 				'position': 1,
 				'name': 'Home',
-				'item': 'https://filemorph.me'
+				'item': 'https://Convertwith.me'
 			},
 			{
 				'@type': 'ListItem',
 				'position': 2,
 				'name': 'Converters',
-				'item': 'https://filemorph.me/#formats'
+				'item': 'https://Convertwith.me/#formats'
 			},
 			{
 				'@type': 'ListItem',

@@ -16,10 +16,10 @@
 			<a href="/" class="flex items-center gap-2" data-sveltekit-prefetch>
 				<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 					<rect width="32" height="32" rx="8" fill="#2563EB" />
-					<path d="M8 16L14 10L20 16L14 22Z" fill="white" />
-					<path d="M14 16L20 10L26 16L20 22Z" fill="#93c5fd" />
+					<path d="M6 22V10L16 22V10" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M18 16H26M22 12V20" stroke="#93c5fd" stroke-width="2.5" stroke-linecap="round"/>
 				</svg>
-				<span class="text-xl font-bold text-gray-900">File<span class="text-brand-600">Morph</span></span>
+				<span class="text-xl font-bold text-gray-900">Convert<span class="text-brand-600">withMe</span></span>
 			</a>
 
 			<div class="hidden md:flex items-center gap-6">

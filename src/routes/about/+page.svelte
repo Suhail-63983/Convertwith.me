@@ -1,28 +1,28 @@
 <svelte:head>
-	<title>About FileMorph — Privacy-First File Converter</title>
-	<meta name="description" content="Learn about FileMorph — a privacy-first, client-side file converter that processes all files locally in your browser using WebAssembly." />
-	<meta property="og:title" content="About FileMorph — Privacy-First File Converter" />
-	<meta property="og:description" content="Learn about FileMorph — a privacy-first, client-side file converter that processes all files locally in your browser using WebAssembly." />
-	<meta name="twitter:title" content="About FileMorph — Privacy-First File Converter" />
-	<meta name="twitter:description" content="Learn about FileMorph — a privacy-first, client-side file converter that processes all files locally in your browser." />
+	<title>About ConvertwithMe — Privacy-First File Converter</title>
+	<meta name="description" content="Learn about ConvertwithMe — a privacy-first, client-side file converter that processes all files locally in your browser using WebAssembly." />
+	<meta property="og:title" content="About ConvertwithMe — Privacy-First File Converter" />
+	<meta property="og:description" content="Learn about ConvertwithMe — a privacy-first, client-side file converter that processes all files locally in your browser using WebAssembly." />
+	<meta name="twitter:title" content="About ConvertwithMe — Privacy-First File Converter" />
+	<meta name="twitter:description" content="Learn about ConvertwithMe — a privacy-first, client-side file converter that processes all files locally in your browser." />
 </svelte:head>
 
 <div class="max-w-4xl mx-auto px-4 py-16">
-	<h1 class="text-3xl font-bold text-gray-900 mb-8">About FileMorph</h1>
+	<h1 class="text-3xl font-bold text-gray-900 mb-8">About ConvertwithMe</h1>
 
 	<div class="prose prose-gray max-w-none">
 		<p class="text-gray-600 mb-6 text-lg">
-			FileMorph is a privacy-first file conversion tool that runs entirely in your browser. No uploads, no tracking, no limits.
+			ConvertwithMe is a privacy-first file conversion tool that runs entirely in your browser. No uploads, no tracking, no limits.
 		</p>
 
 		<h2 class="text-xl font-semibold text-gray-900 mt-8 mb-4">Our Mission</h2>
 		<p class="text-gray-600 mb-4">
-			We believe file conversion should be simple, fast, and private. Most online converters upload your files to their servers, store them temporarily (or permanently), and track your usage. FileMorph does the opposite: every conversion happens on your device, using your device's processing power.
+			We believe file conversion should be simple, fast, and private. Most online converters upload your files to their servers, store them temporarily (or permanently), and track your usage. ConvertwithMe does the opposite: every conversion happens on your device, using your device's processing power.
 		</p>
 
 		<h2 class="text-xl font-semibold text-gray-900 mt-8 mb-4">How It Works</h2>
 		<p class="text-gray-600 mb-4">
-			FileMorph uses WebAssembly (WASM) to run powerful conversion libraries directly in your browser. These are the same libraries used by desktop applications — ImageMagick for image conversions, Pandoc for document conversions, PDF.js for PDF rendering, and pdf-lib for PDF creation. The difference is that we run them in your browser instead of on a server.
+			ConvertwithMe uses WebAssembly (WASM) to run powerful conversion libraries directly in your browser. These are the same libraries used by desktop applications — ImageMagick for image conversions, Pandoc for document conversions, PDF.js for PDF rendering, and pdf-lib for PDF creation. The difference is that we run them in your browser instead of on a server.
 		</p>
 		<p class="text-gray-600 mb-4">
 			Each converter page only loads the specific library it needs. Image converters load ImageMagick, document converters load Pandoc, and so on. This means you're never downloading libraries you don't need. Libraries are cached after the first download for instant access on repeat visits.
@@ -42,7 +42,7 @@
 
 		<h2 class="text-xl font-semibold text-gray-900 mt-8 mb-4">Open Source</h2>
 		<p class="text-gray-600 mb-4">
-			FileMorph is built with open-source technologies: SvelteKit, TailwindCSS, ImageMagick WASM, Pandoc WASM, PDF.js, pdf-lib, and mammoth.js. We believe in transparency and open source.
+			ConvertwithMe is built with open-source technologies: SvelteKit, TailwindCSS, ImageMagick WASM, Pandoc WASM, PDF.js, pdf-lib, and mammoth.js. We believe in transparency and open source.
 		</p>
 	</div>
 </div>

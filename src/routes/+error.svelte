@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>{status} — FileMorph</title>
+	<title>{status} — ConvertwithMe</title>
 </svelte:head>
 
 <div class="max-w-2xl mx-auto px-4 py-24 text-center">

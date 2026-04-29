@@ -3,17 +3,17 @@
 </script>
 
 <svelte:head>
-	<title>Convert Files Free & Private — No Uploads, No Tracking | FileMorph</title>
+	<title>Convert Files Free & Private — No Uploads, No Tracking | ConvertwithMe</title>
 	<meta name="description" content="Convert files instantly in your browser. No uploads to servers, no tracking, 100% free. Supports JPG, PNG, WebP, PDF, DOCX, HTML, and more." />
-	<meta property="og:title" content="Convert Files Free & Private — No Uploads, No Tracking | FileMorph" />
+	<meta property="og:title" content="Convert Files Free & Private — No Uploads, No Tracking | ConvertwithMe" />
 	<meta property="og:description" content="Convert files instantly in your browser. No uploads to servers, no tracking, 100% free. Supports JPG, PNG, WebP, PDF, DOCX, HTML, and more." />
-	<meta name="twitter:title" content="Convert Files Free & Private — No Uploads, No Tracking | FileMorph" />
+	<meta name="twitter:title" content="Convert Files Free & Private — No Uploads, No Tracking | ConvertwithMe" />
 	<meta name="twitter:description" content="Convert files instantly in your browser. No uploads to servers, no tracking, 100% free." />
 	<script type="application/ld+json">{JSON.stringify({
 		"@context": "https://schema.org",
 		"@type": "WebApplication",
-		"name": "FileMorph",
-		"url": "https://filemorph.me",
+		"name": "ConvertwithMe",
+		"url": "https://Convertwith.me",
 		"description": "Privacy-first, client-side file converter. Convert images, documents, and PDFs instantly in your browser with no server uploads.",
 		"applicationCategory": "UtilitiesApplication",
 		"operatingSystem": "Any",
@@ -31,7 +31,7 @@
 			"@type": "ListItem",
 			"position": 1,
 			"name": "Home",
-			"item": "https://filemorph.me"
+			"item": "https://Convertwith.me"
 		}]
 	})}</script>
 </svelte:head>

@@ -14,16 +14,16 @@
 <svelte:head>
 	<link rel="canonical" href={canonicalUrl} />
 	<meta property="og:type" content="website" />
-	<meta property="og:site_name" content="FileMorph" />
+	<meta property="og:site_name" content="ConvertwithMe" />
 	<meta property="og:url" content={canonicalUrl} />
 	<meta property="og:locale" content="en_US" />
-	<meta property="og:image" content="https://filemorph.me/og-image.png" />
+	<meta property="og:image" content="https://Convertwith.me/og-image.png" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
-	<meta property="og:image:alt" content="FileMorph — Convert Files Free & Private" />
+	<meta property="og:image:alt" content="ConvertwithMe — Convert Files Free & Private" />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:site" content="@filemorph" />
-	<meta name="twitter:image" content="https://filemorph.me/og-image.png" />
+	<meta name="twitter:site" content="@ConvertwithMe" />
+	<meta name="twitter:image" content="https://Convertwith.me/og-image.png" />
 </svelte:head>
 
 <div class="min-h-screen flex flex-col">

@@ -3,7 +3,7 @@ import type { RequestHandler } from "./$types";
 
 export const GET: RequestHandler = async () => {
   const slugs = getAllSlugs();
-  const baseUrl = "https://filemorph.me";
+  const baseUrl = "https://Convertwith.me";
 
   const pages = [
     { url: baseUrl, priority: "1.0", changefreq: "weekly" },

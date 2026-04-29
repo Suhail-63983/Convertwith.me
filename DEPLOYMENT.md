@@ -1,15 +1,15 @@
-# Deployment Guide — FileConvert (VertSEO)
+# Deployment Guide — ConvertwithMe
 
 ## 1. Create the Project
 
 ```bash
-mkdir fileconvert && cd fileconvert
+mkdir convertwithme && cd convertwithme
 ```
 
 Copy all source files from this project into the directory, maintaining the folder structure:
 
 ```
-fileconvert/
+convertwithme/
 ├── package.json
 ├── tsconfig.json
 ├── svelte.config.ts
@@ -182,11 +182,11 @@ Cross-Origin-Embedder-Policy: require-corp
 1. Go to https://app.netlify.com
 2. Select your project
 3. Go to Domain Management > Add custom domain
-4. Add your custom domain (e.g., fileconvert.app)
+4. Add your custom domain (e.g., Convertwith.me)
 5. Update your domain's DNS records as instructed by Netlify.
 6. Wait for SSL certificate provisioning (automatic via Let's Encrypt).
 7. Update the base URL in these files:
-   - `src/routes/sitemap.xml/+server.ts` — change `https://fileconvert.app` to your domain
+   - `src/routes/sitemap.xml/+server.ts` — change `https://Convertwith.me` to your domain
    - `static/robots.txt` — change the Sitemap URL to your domain
    - `src/routes/privacy/+page.svelte` — update the contact email and domain references
 
