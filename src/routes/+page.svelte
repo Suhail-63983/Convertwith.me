@@ -26,6 +26,32 @@
 	})}</script>
 	<script type="application/ld+json">{JSON.stringify({
 		"@context": "https://schema.org",
+		"@type": "Organization",
+		"name": "ConvertwithMe",
+		"url": "https://Convertwith.me",
+		"logo": "https://Convertwith.me/og-image.png",
+		"description": "Privacy-first, client-side file converter. Convert images, documents, and PDFs instantly in your browser with no server uploads.",
+		"sameAs": [
+			"https://twitter.com/ConvertwithMe",
+			"https://github.com/ConvertwithMe"
+		]
+	})}</script>
+	<script type="application/ld+json">{JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "WebSite",
+		"name": "ConvertwithMe",
+		"url": "https://Convertwith.me",
+		"potentialAction": {
+			"@type": "SearchAction",
+			"target": {
+				"@type": "EntryPoint",
+				"urlTemplate": "https://Convertwith.me/convert/{search_term_string}"
+			},
+			"query-input": "required name=search_term_string"
+		}
+	})}</script>
+	<script type="application/ld+json">{JSON.stringify({
+		"@context": "https://schema.org",
 		"@type": "BreadcrumbList",
 		"itemListElement": [{
 			"@type": "ListItem",

@@ -5,6 +5,26 @@
 	<meta property="og:description" content="Learn about ConvertwithMe — a privacy-first, client-side file converter that processes all files locally in your browser using WebAssembly." />
 	<meta name="twitter:title" content="About ConvertwithMe — Privacy-First File Converter" />
 	<meta name="twitter:description" content="Learn about ConvertwithMe — a privacy-first, client-side file converter that processes all files locally in your browser." />
+<script type="application/ld+json">{JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		"itemListElement": [
+			{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://Convertwith.me" },
+			{ "@type": "ListItem", "position": 2, "name": "About", "item": "https://Convertwith.me/about" }
+		]
+	})}</script>
+	<script type="application/ld+json">{JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "AboutPage",
+		"name": "About ConvertwithMe",
+		"url": "https://Convertwith.me/about",
+		"description": "Learn about ConvertwithMe — a privacy-first, client-side file converter that processes all files locally in your browser using WebAssembly.",
+		"about": {
+			"@type": "Organization",
+			"name": "ConvertwithMe",
+			"url": "https://Convertwith.me"
+		}
+	})}</script>
 </svelte:head>
 
 <div class="max-w-4xl mx-auto px-4 py-16">

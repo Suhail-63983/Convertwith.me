@@ -6,9 +6,11 @@
 
 	import { page } from '$app/stores';
 
+	const SITE_URL = 'https://Convertwith.me';
+
 	let { children } = $props();
 
-	let canonicalUrl = $derived($page.url.origin + $page.url.pathname);
+	let canonicalUrl = $derived(SITE_URL + $page.url.pathname);
 </script>
 
 <svelte:head>

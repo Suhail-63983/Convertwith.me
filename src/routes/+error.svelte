@@ -7,6 +7,7 @@
 
 <svelte:head>
 	<title>{status} — ConvertwithMe</title>
+	<meta name="robots" content="noindex" />
 </svelte:head>
 
 <div class="max-w-2xl mx-auto px-4 py-24 text-center">

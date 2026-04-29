@@ -3,15 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="icon"
-      href="%sveltekit.assets%/favicon.svg"
-      type="image/svg+xml"
-    />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="icon" href="%sveltekit.assets%/favicon.svg" type="image/svg+xml" />
     <meta name="theme-color" content="#2563EB" />
     %sveltekit.head%
   </head>
   <body data-sveltekit-prerender="true">
     <div style="display: contents">%sveltekit.body%</div>
+    <noscript>
+      <div style="max-width:600px;margin:100px auto;padding:2rem;text-align:center;font-family:system-ui,sans-serif">
+        <h1 style="color:#2563EB">JavaScript Required</h1>
+        <p style="color:#4b5563;font-size:1.1rem">ConvertwithMe requires JavaScript to process files in your browser. Please enable JavaScript in your browser settings to use our converters.</p>
+      </div>
+    </noscript>
   </body>
 </html>

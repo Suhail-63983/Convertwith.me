@@ -5,6 +5,22 @@
 	<meta property="og:description" content="Privacy policy for ConvertwithMe — a privacy-first, client-side file converter. Learn how we protect your data." />
 	<meta name="twitter:title" content="Privacy Policy — ConvertwithMe" />
 	<meta name="twitter:description" content="Privacy policy for ConvertwithMe — learn how we protect your data." />
+<script type="application/ld+json">{JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		"itemListElement": [
+			{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://Convertwith.me" },
+			{ "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://Convertwith.me/privacy" }
+		]
+	})}</script>
+	<script type="application/ld+json">{JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "WebPage",
+		"name": "Privacy Policy — ConvertwithMe",
+		"url": "https://Convertwith.me/privacy",
+		"description": "Privacy policy for ConvertwithMe — a privacy-first, client-side file converter. Learn how we protect your data.",
+		"dateModified": "2025-01-01"
+	})}</script>
 </svelte:head>
 
 <div class="max-w-4xl mx-auto px-4 py-16">

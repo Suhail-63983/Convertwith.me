@@ -1,6 +1,8 @@
 import { getAllSlugs } from "$lib/utils/converterRouter";
 import type { RequestHandler } from "./$types";
 
+export const prerender = true;
+
 export const GET: RequestHandler = async () => {
   const slugs = getAllSlugs();
   const baseUrl = "https://Convertwith.me";
@@ -16,12 +18,15 @@ export const GET: RequestHandler = async () => {
     })),
   ];
 
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+  const lastmod = new Date().toISOString().split("T")[0];
+
+const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${pages
   .map(
     (p) => `  <url>
     <loc>${p.url}</loc>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>${p.changefreq}</changefreq>
     <priority>${p.priority}</priority>
   </url>`,

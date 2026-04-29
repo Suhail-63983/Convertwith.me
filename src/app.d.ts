@@ -14,6 +14,9 @@ declare namespace App {
       faq: Array<{ question: string; answer: string }>;
     };
     canonicalUrl?: string;
+    faqJsonLdScript?: string;
+    softwareAppJsonLdScript?: string;
+    breadcrumbJsonLdScript?: string;
   }
   interface PageState {}
   interface Platform {}

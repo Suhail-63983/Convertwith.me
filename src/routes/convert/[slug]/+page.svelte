@@ -25,60 +25,7 @@
 	const toFormat = $derived(data.toFormat);
 	const libraryName = $derived(data.libraryName);
 	const meta = $derived(data.meta);
-	const canonicalUrl = $derived($page.url.origin + $page.url.pathname);
-
-	const faqJsonLd = $derived({
-		'@context': 'https://schema.org',
-		'@type': 'FAQPage',
-		mainEntity: meta.faq.map((f: { question: string; answer: string }) => ({
-			'@type': 'Question',
-			name: f.question,
-			acceptedAnswer: {
-				'@type': 'Answer',
-				text: f.answer
-			}
-		}))
-	});
-
-	const softwareAppJsonLd = $derived({
-		'@context': 'https://schema.org',
-		'@type': 'SoftwareApplication',
-		'name': `ConvertwithMe — ${fromFormat.toUpperCase()} to ${toFormat.toUpperCase()} Converter`,
-		'url': canonicalUrl,
-		'applicationCategory': 'UtilitiesApplication',
-		'operatingSystem': 'Any',
-		'description': meta.description,
-		'offers': {
-			'@type': 'Offer',
-			'price': '0',
-			'priceCurrency': 'USD'
-		}
-	});
-
-	const breadcrumbJsonLd = $derived({
-		'@context': 'https://schema.org',
-		'@type': 'BreadcrumbList',
-		'itemListElement': [
-			{
-				'@type': 'ListItem',
-				'position': 1,
-				'name': 'Home',
-				'item': 'https://Convertwith.me'
-			},
-			{
-				'@type': 'ListItem',
-				'position': 2,
-				'name': 'Converters',
-				'item': 'https://Convertwith.me/#formats'
-			},
-			{
-				'@type': 'ListItem',
-				'position': 3,
-				'name': `${fromFormat.toUpperCase()} to ${toFormat.toUpperCase()}`,
-				'item': canonicalUrl
-			}
-		]
-	});
+	const canonicalUrl = $derived(data.canonicalUrl);
 
 	const needsWasm = $derived(libraryName === 'imagemagick' || libraryName === 'pdfjs');
 
@@ -172,10 +119,10 @@
 	<meta property="og:url" content={canonicalUrl} />
 	<meta name="twitter:title" content={meta.title} />
 	<meta name="twitter:description" content={meta.description} />
-	<script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
-	<script type="application/ld+json">{JSON.stringify(softwareAppJsonLd)}</script>
-	<script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
-</svelte:head>
+	{@html data.faqJsonLdScript}
+	{@html data.softwareAppJsonLdScript}
+	{@html data.breadcrumbJsonLdScript}
+	</svelte:head>
 
 <section class="bg-gradient-to-br from-brand-600 via-brand-700 to-brand-900 text-white py-16">
 	<div class="max-w-4xl mx-auto px-4 text-center">
