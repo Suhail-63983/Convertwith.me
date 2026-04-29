@@ -61,11 +61,11 @@ export const imageConverter: ConverterModule = {
     const arrayBuffer = await file.arrayBuffer();
     const inputBytes = new Uint8Array(arrayBuffer);
 
-    // Map our format strings to MagickFormat enum values.
-    // MagickFormat uses capitalized names like "Png", "Jpeg", "WebP", etc.
-    const toUpper = toFormat.toUpperCase();
-    const formatValue = (MagickFormat as Record<string, string>)[toUpper] ??
-      (MagickFormat as Record<string, string>)[toFormat.charAt(0).toUpperCase() + toFormat.slice(1).toLowerCase()];
+    // Build a case-insensitive lookup from MagickFormat enum keys.
+    const lookup = Object.fromEntries(
+      Object.entries(MagickFormat as Record<string, string>).map(([k, v]) => [k.toLowerCase(), v])
+    );
+    const formatValue = lookup[toFormat.toLowerCase()];
 
     if (!formatValue) {
       throw new Error(`Unsupported output format: ${toFormat}`);
